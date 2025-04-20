@@ -56,7 +56,7 @@ function Game() {
 
     const userId = localStorage.getItem('userId');
     if (userId) {
-      fetch('/api/game/score', {
+      fetch('https://typing-speed-battle-game-backend.vercel.app/api/game/score', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
