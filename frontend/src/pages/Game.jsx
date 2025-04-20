@@ -23,7 +23,7 @@ function Game() {
       return;
     }
 
-    fetch('/api/game/words')
+    fetch('https://typing-speed-battle-game-backend.vercel.app/api/game/words')
       .then(res => res.json())
       .then(data => setWords(data.words))
       .catch(err => console.error('Error fetching words:', err));
