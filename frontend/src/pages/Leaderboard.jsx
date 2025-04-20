@@ -6,7 +6,7 @@ function Leaderboard() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/api/game/leaderboard')
+    fetch('https://typing-speed-battle-game-backend.vercel.app/api/game/leaderboard')
       .then(res => res.json())
       .then(data => {
         setLeaderboard(data.leaderboard);
