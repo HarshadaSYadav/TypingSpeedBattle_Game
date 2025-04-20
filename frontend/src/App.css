@@ -1,0 +1,272 @@
+/* Base styles */
+#root {
+  max-width: auto;
+  margin: 0 auto;
+ 
+  text-align: center;
+}
+
+/* Game specific styles */
+.typing-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.word-display {
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  line-height: 2;
+  text-align: left;
+  margin: 20px 0;
+  padding: 20px;
+  background: #1f2937;
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
+
+.word-display span {
+  transition: all 0.2s ease;
+}
+
+.word {
+  margin-right: 8px;
+}
+
+.current-word {
+  background-color: #e9ecef;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.correct-word {
+  color: #198754;
+}
+
+.incorrect-word {
+  color: #dc3545;
+  text-decoration: underline wavy #dc3545;
+}
+
+.typing-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-family: 'Courier New', monospace;
+}
+
+.typing-input:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+/* Progress bar */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #0d6efd;
+  transition: width 0.3s ease;
+}
+
+/* Stats display */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #212529;
+}
+
+/* Button styles */
+.button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button-primary {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: #0b5ed7;
+}
+
+.button-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.button-secondary:hover {
+  background-color: #5c636a;
+}
+
+/* Leaderboard styles */
+.leaderboard {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.leaderboard-header {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.leaderboard-row {
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.leaderboard-rank {
+  width: 50px;
+  font-weight: bold;
+}
+
+/* Form styles */
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #212529;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+/* Dark mode styles */
+.dark {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.dark .word-display,
+.dark .stats,
+.dark .leaderboard {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+.dark .typing-input {
+  background-color: #343a40;
+  border-color: #495057;
+  color: #f8f9fa;
+}
+
+.dark .form-input {
+  background-color: #343a40;
+  border-color: #495057;
+  color: #f8f9fa;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .typing-container {
+    padding: 10px;
+  }
+
+  .word-display {
+    font-size: 1.2rem;
+  }
+
+  .typing-input {
+    font-size: 1rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Game-specific styles */
+.game-container {
+  font-family: 'Roboto', sans-serif;
+  color: #f8f9fa;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
+}
+
+button {
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
